@@ -7,6 +7,7 @@ $c = $res->fetch_assoc();
 if(isset($_POST['aggiorna'])){
     $nuovo_nome = $_POST['nome'];
     $conn->query("UPDATE costellazioni SET nome='$nuovo_nome' WHERE id=$id");
+    
     header("Location: catalogo.php");
 }
 ?>
