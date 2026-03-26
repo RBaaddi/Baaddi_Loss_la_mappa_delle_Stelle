@@ -8,6 +8,7 @@
     <h1>La Mappa delle Stelle</h1>
     <?php
     $res = $conn->query("SELECT * FROM stelle ORDER BY RAND() LIMIT 1");
+    
     if($s = $res->fetch_assoc()): ?>
         <div style="text-align:center; border: 2px solid var(--star-gold); padding: 20px;">
             <h2><?php echo $s['nome']; ?></h2>
