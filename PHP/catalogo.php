@@ -1,13 +1,31 @@
-<?php include 'db.php'; ?>
+<?php 
+include 'db.php'; 
+?>
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="../style.css"></head>
+<head>
+    <link rel="stylesheet" href="../style.css">
+    <title>Catalogo Galattico</title>
+</head>
 <body>
 <div class="container">
-    <nav><a href="index.php">Pagina home</a> | <a href="aggiungi_stella.php">Aggiungi stella</a> | <a href="aggiungi_costellazione">Aggiungi costellazione</a></nav>
+    <nav>
+        <a href="index.php">Pagina home</a> | 
+        <a href="aggiungi_stella.php">Aggiungi stella</a> | 
+        <a href="aggiungi_costellazione.php">Aggiungi costellazione</a>
+    </nav>
+
     <h1>Catalogo Galattico</h1>
+
     <table>
-        <tr><th>Stella</th><th>SAO</th><th>Costellazione</th><th>Azioni</th></tr>
+        <tr>
+            <th>Stella</th>
+            <th>SAO</th>
+            <th>Costellazione</th>
+            <th>Modifica stella</th>
+            <th>Modifica costellazione</th>
+        </tr>
+
         <?php
         $res = $conn->query("SELECT s.*, c.nome as c_nome FROM stelle s LEFT JOIN costellazioni c ON s.id_costellazione = c.id ORDER BY c.nome");
         while($row = $res->fetch_assoc()): ?>
@@ -17,6 +35,13 @@
                 <td><?php echo $row['c_nome'] ?? 'Nessuna'; ?></td>
                 <td>
                     <a href="modifica_stella.php?id=<?php echo $row['sao_code']; ?>">Modifica</a>
+                </td>
+                <td>
+                    <?php if ($row['id_costellazione']): ?>
+                        <a href="modifica_costellazione.php?id=<?php echo $row['id_costellazione']; ?>">Modifica</a>
+                    <?php else: ?>
+                        Nessuna
+                    <?php endif; ?>
                 </td>
             </tr>
         <?php endwhile; ?>
