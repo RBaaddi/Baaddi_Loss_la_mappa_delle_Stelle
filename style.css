@@ -1,0 +1,31 @@
+:root {
+    --space-bg: #0b0d17;
+    --star-gold: #f1c40f;
+    --text-light: #e0e0e0;
+    --accent: #3498db;
+}
+
+body {
+    background-color: var(--space-bg);
+    color: var(--text-light);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0; padding: 20px;
+    line-height: 1.6;
+}
+
+.container { max-width: 900px; margin: auto; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; }
+
+h1 { color: var(--star-gold); text-align: center; text-transform: uppercase; }
+
+nav { text-align: center; margin-bottom: 30px; }
+nav a { color: var(--accent); margin: 0 10px; text-decoration: none; font-weight: bold; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { border: 1px solid #444; padding: 12px; text-align: left; }
+th { background-color: var(--accent); color: white; }
+
+form { display: flex; flex-direction: column; gap: 15px; }
+input, select { padding: 10px; border-radius: 5px; border: 1px solid #444; background: #1a1c2c; color: white; }
+
+.btn { background: var(--accent); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; text-align: center; }
+.btn:hover { opacity: 0.8; }
