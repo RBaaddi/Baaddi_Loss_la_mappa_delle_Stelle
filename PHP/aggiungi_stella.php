@@ -12,6 +12,7 @@ if(isset($_POST['add'])){
 <div class="container">
     <nav><a href="index.php">Pagina home</a> | <a href="catalogo.php">Catalogo</a> | <a href="aggiungi_costellazione.php">Aggiungi costellazione</a></nav>
     <h1>Aggiungi Nuova Stella</h1>
+    
     <form method="POST">
         <input name="sao" placeholder="Codice SAO" required>
         <input name="nome" placeholder="Nome Stella" required>
