@@ -13,6 +13,7 @@ if(isset($_POST['salva'])){
 <div class="container">
     <nav><a href="index.php">Home</a> | <a href="catalogo.php">Catalogo</a> | <a href="aggiungi_stella.php">Aggiungi stella</a></nav>
     <h1>Nuova Costellazione</h1>
+    
     <form method="POST">
         <input name="nome" placeholder="Nome Costellazione (es. Orione)" required>
         <button type="submit" name="salva" class="btn">Aggiungi</button>
