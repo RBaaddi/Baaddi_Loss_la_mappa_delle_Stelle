@@ -1,3 +1,5 @@
+-- Il nome del database è: db_la_mappa_delle_stelle
+
 CREATE TABLE costellazioni (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL
